@@ -1,0 +1,189 @@
+git status	#mostra as informaçoes
+git add (nome do arquivo)	#coloca um arquivo como importante para o git
+rm -fr .git/ 	#remmovendo a pasta git(cuidado gravissimo pois esta removendo todas infos e seu repositorio)
+git commit -m "...."
+
+#ESTUDOS
+
+Ciclo de vida de arquivo
+
+arquivo untracked = não rastreado
+
+git add (arquivo) -> staged (preparado)
+
+commit -> unmodified (não modificado)
+
+edição -> o arquivo se torna modified(modificado)
+
+desisti -> o arquivo volta a ser neutro unmodified
+
+se as alteraçoes estavam certas? adiciona o arquivo novamente e da outro commit
+
+
+estados (UNTRACKED, UNMODIFIED, MODIFIED, STAGED)
+
+git diff #verifica a diferença entre versao modified and unmodified
+
+git diff --cached #verifica a diferenca entre a versao anterior e a atual
+
+git log			#mostra todas versoes de commit
+digitar "q" para sair 
+
+
+git log --oneline	#mostra só as mensagens de commit
+git log --oneline -3
+
+git log -3 		#mostra 3 ultimos commit
+
+git log --stat		#mostra nos commit quais arquivos foram alterados
+
+git log --shortstat
+
+
+git commit --amend -m "Alteração de Arquivo" #amend usado para mudar o nome do commit
+
+
+git commit --amend --no-edit #faz commit com o arquivo que eu esqueci em um commit anterior
+
+git commit --amend #editor padrao
+
+esq + ":wq" #write and quit para salvar e sair do editor padrao
+
+
+git config --global core.editor "code --wait" #utilizando vscode como editor
+
+
+#FORMA DE VERIFICAR OS RESULTADOS Q VC TINHA NOS COMMITS ANTERIORES:
+
+faça git log --oneline e dps pega o numero do commit e faça:
+
+git checkout (nº do commit)
+
+git checkout master 	#VOLTANDO PR ULTIMA VERSAO
+
+
+#FORMA DE CANCELAR AS ALTERAÇÕES
+
+git checkout (arquivo)
+
+git clean -f     #REMOVE ARQUIVOS NÃO RASTREADOS
+
+
+
+#git rm --cached (arquivo) #REMOVER ARQUIVO PARA O MODO UNTRACKED (APENAS REPOSITORIO NOVO)
+
+git restore --staged (arquivo)  #REMOVER ARQUIVO PARA O MODO UNTRACKED (funciona apenas se tiver pelo menos 1 commit)
+
+
+
+git reset --hard    #ignora tudo que aconteceu at o ultimo momento
+
+
+#Forma de ignorar arquivos que não versionar no git
+
+
+touch .gitignore  /isto cria um arquivo .gitignore
+
+Escreva dentro do arquivo gitignore os arquivos a serem ignorados e salve!
+Exemplo:
+*.bmp
+
+config.txt
+
+Dessa forma arquivos .bmp serão ignorados e o arquivo config.txt também será ignorado, ao realizar gitstatus vc verifica se deu certo
+
+#COMO IGNORAR UM ARQUIVO QUE JA ESTA NO BANCO DE DADOS DO GIT, OU SEJA JA FOI COMMITADO
+
+#EXEMPLO PARA UM ARQUIVO HTML:
+
+git update-index --skip-worktree index.html
+
+#PARA VOLTAR A SER VERSIONADO:
+
+git update-index --no--skip-worktree index.html
+
+
+#clonando repositorio
+
+cd ..
+
+git clone gitrepo gitclone
+
+cd gitclone/
+
+
+
+#COMO VINCULAR UM REPOSITORIO NO GITHUB NO SEU GIT PARA DAR LANÇAR SUAS ATUALIZAÇÕES EM CIMA DELE
+
+
+//Adicione o repositório remoto (substitua <url_do_repositorio> pela URL copiada do GitHub)
+
+git remote add origin <url_do_repositorio>
+
+git remote -v // VERIFIQUE SE O REPOSITORIO REMOTO FOI CONFIGURADO CORRETAMENTE
+
+# Adicione todos os arquivos modificados ao próximo commit
+git add .
+
+# Faça o commit das alterações com uma mensagem descritiva
+git commit -m "Adicionar descrição do commit aqui"
+
+# Faça o push das alterações para o repositório remoto chamado 'origin' na branch 'main' (ou outra branch, se aplicável)
+git push -u origin main
+
+
+
+
+#PARA MUDAR DE UMA BRANCH PARA OUTRA
+
+git branch -m (nome da branch)
+
+
+
+
+#COMO BUSCAR E MESCLAR OS COMMITS DE REPOSITORIO LOCAL E REMOTO
+
+
+git pull
+
+
+
+
+
+1. Issues (Problemas)
+As Issues são utilizadas para rastrear tarefas, bugs, solicitações de recursos ou discussões relacionadas a um projeto específico. Cada Issue é uma unidade individual que pode ser aberta, atribuída a membros da equipe, comentada e fechada à medida que o trabalho é concluído.
+
+Principais características das Issues:
+
+Criação: Os usuários podem abrir uma Issue para relatar um problema, solicitar um recurso ou iniciar uma discussão.
+Atribuição: É possível atribuir uma Issue a um membro da equipe responsável por resolver o problema ou implementar a funcionalidade.
+Comentários: Os membros da equipe e colaboradores podem adicionar comentários às Issues para discutir detalhes ou fornecer atualizações.
+Fechamento: Quando uma Issue é resolvida, ela pode ser fechada, indicando que o trabalho está completo.
+2. Labels (Etiquetas)
+As Labels são utilizadas para categorizar e organizar as Issues em diferentes grupos ou tipos, facilitando a visualização e a identificação de problemas específicos ou tipos de tarefas.
+
+Principais características das Labels:
+
+Categorização: As Labels são atribuídas às Issues para indicar o tipo de problema, prioridade, área do projeto, ou qualquer outra informação relevante.
+Coloração: Cada Label pode ter uma cor específica, o que ajuda na identificação visual das Issues.
+Filtros: As Labels podem ser usadas como filtros para encontrar rapidamente Issues específicas com base em critérios definidos.
+Exemplos de Labels comuns incluem "bug", "enhancement" (melhoria), "documentation" (documentação), "feature request" (solicitação de recurso), "high priority" (alta prioridade), entre outros.
+
+3. Milestones (Marcos)
+Os Milestones são usados para agrupar um conjunto de Issues relacionadas a uma meta ou marco específico do projeto. Um Milestone representa uma meta ou fase dentro do ciclo de desenvolvimento, e permite que a equipe acompanhe o progresso em direção a essa meta.
+
+Principais características dos Milestones:
+
+Agrupamento: As Issues podem ser associadas a um Milestone para indicar que estão relacionadas a uma meta específica.
+Prazos: Os Milestones podem ter prazos associados, indicando a data de conclusão prevista para as Issues agrupadas nele.
+Acompanhamento de Progresso: Os Milestones exibem o progresso em relação às Issues associadas, mostrando quantas foram concluídas e quantas ainda estão abertas.
+
+
+
+
+
+
+
+
+
+
