@@ -240,7 +240,32 @@ git branch -m TASK10 TAKS-1 //caso eu esteja em uma branch diferente
 git branch -m TAKS-1 //caso eu esteja na branch q quero renomear
 
 
+#MESCLANDO AS BRANCHS
+
 git merge develop
+
+#COMO VERIFICAR SE ALGUMA BRANCH N FOI MESCLADA
+
+git branch --no-merged
+
+#quais foram mergeadas
+
+git branch --merged
+
+
+#COMO CRIAR TAGS PARA SEUS COMMITS
+
+git tag v1 //tag no ultimo commit
+
+
+git tag -a -m "tag criada v2" v2
+
+
+#MOSTRAR AS TAGS
+
+git tag
+
+git tag -n
 
 
 
