@@ -180,6 +180,84 @@ Acompanhamento de Progresso: Os Milestones exibem o progresso em relação às I
 
 
 
+#COMO CRIAR UMA NOVA BRANCH
+
+
+exemplo:
+git branch develop
+
+git branch // para listagem
+
+git checkout develop //para passar a usar a branch nova
+
+
+ git switch develop // mudando de branch
+
+ git switch - // voltando para a branch anterior
+
+git switch -c TASK-2 // criando nova branch
+
+
+
+
+
+
+//Aqui está um exemplo completo dos comandos para enviar uma nova branch chamada minha-nova-branch para o repositório remoto:
+
+#Criar e alternar para uma nova branch local:
+git checkout -b minha-nova-branch
+
+#Adicionar e commitar suas alterações na nova branch (se necessário):
+
+git add .
+git commit -m "Implementar nova funcionalidade"
+
+#Enviar a nova branch para o repositório remoto:
+
+git push -u origin minha-nova-branch
+
+
+#como remover branch local
+
+git branch -d TASK-1
+
+
+#REMOVENDO BRANCH REMOTA
+
+git switch -c TASK5
+
+git push --set-upstream origin TASK5
+
+git push --delete origin TASK5
+
+POREM A BRANCH CONTINUA EXISTENTE LOCALMENTE
+
+#RENOMEANDO BRANCHS LOCAIS
+
+
+git branch -m TASK10 TAKS-1 //caso eu esteja em uma branch diferente
+
+git branch -m TAKS-1 //caso eu esteja na branch q quero renomear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
